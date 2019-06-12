@@ -1,0 +1,97 @@
+/*********************Classes: Constructors***************************/
+public class Store {
+  
+  // new method: constructor!
+  public Store() {
+    System.out.println("I am inside the constructor method.");
+		
+  }
+  
+  // main method is where we create instances!
+  public static void main(String[] args) {
+    System.out.println("Start of the main method.");
+    
+    // create the instance below
+    Store lemonadeStand = new Store();
+    // print the instance below
+    System.out.println(lemonadeStand);
+  }
+}
+/******************Classes: Instance Fields***************************************/
+public class Store {
+  // declare instance fields here!
+  String productType;
+  
+  // constructor method
+  public Store() {
+    System.out.println("I am inside the constructor method.");
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    System.out.println("This code is inside the main method.");
+    
+    Store lemonadeStand = new Store();
+    
+    System.out.println(lemonadeStand);
+  }
+}
+/*****************Classes: Constructor Parameters**************/
+public class Store {
+  // instance fields
+  String productType;
+  
+  // constructor method
+  public Store(String product) {
+    productType = product;
+    
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    
+    
+  }
+}
+/**************************Classes: Assigning Values to Instance Fields*********************/
+public class Store {
+  // instance fields
+  String productType;
+  
+  // constructor method
+  public Store(String product) {
+    productType = product;
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    Store lemonadeStand = new Store("lemonade");
+    System.out.println(lemonadeStand.productType);
+    
+  
+    
+  }
+}
+/*********************************************Classes: Multiple Fields***********************************/
+public class Store {
+  // instance fields
+  String productType;
+  int inventoryCount;
+  double inventoryPrice;
+  
+  // constructor method
+  public Store(String product, int count, double price) {
+    productType = product;
+    inventoryCount = count;
+    inventoryPrice = price;
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    Store cookieShop = new Store("cookies", 12, 3.75);
+    
+  }
+}
+/****************************************************Classes: Review**************************************************************/
+
+
