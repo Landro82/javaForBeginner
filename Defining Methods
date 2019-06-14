@@ -1,0 +1,202 @@
+/***********************************Defining Methods******************************************/
+public class Store {
+  // instance fields
+  String productType;
+  
+  // constructor method
+  public Store(String product) {
+    productType = product;
+  }
+  
+  // advertise method
+  public void advertise(){
+    System.out.println("Selling " + productType + "!");
+    System.out.println("Come spend some money!");
+  }
+  // main method
+  public static void main(String[] args) {
+    
+  }
+}
+/***************************************Calling Methods***********************************************/
+public class Store {
+  // instance fields
+  String productType;
+  
+  // constructor method
+  public Store(String product) {
+    productType = product;
+  }
+  
+  // advertise method
+  public void advertise() {
+		System.out.println("Selling " + productType + "!");
+    System.out.println("Come spend some money!");
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    Store lemonadeStand = new Store("Lemonade");
+    lemonadeStand.advertise();
+    lemonadeStand.advertise();
+    lemonadeStand.advertise();
+
+
+  }
+}
+/*************************************************Scope****************************************/
+public class Store {
+  // instance fields
+  String productType;
+  
+  // constructor method
+  public Store(String product) {
+    productType = product;
+  }
+  
+  // advertise method
+  public void advertise() {
+    String message = "Selling " + productType + "!";
+		System.out.println(message);
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    String cookie = "Cookies";
+    Store cookieShop = new Store(cookie);
+    
+    cookieShop.advertise();
+    //System.out.println(message);
+  }
+}
+/*******************************************************Adding Parameters***********************************************/
+public class Store {
+  // instance fields
+  String productType;
+  
+  // constructor method
+  public Store(String product) {
+    productType = product;
+  }
+  
+  // advertise method
+  public void advertise() {
+    String message = "Selling " + productType + "!";
+		System.out.println(message);
+  }
+  //greetCustomer method
+  public void greetCustomer(String customer){
+    System.out.println("Welcome to the store, "+ customer + "!");
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    Store lemonadeStand = new Store("Lemonade");
+    lemonadeStand.greetCustomer("Paul");
+    
+  }
+}
+/************************************************Reassigning Instance Fields******************************************************/
+public class Store {
+  // instance fields
+  String productType;
+  double price;
+  
+  // constructor method
+  public Store(String product, double initialPrice) {
+    productType = product;
+    price = initialPrice;
+  }
+  
+  // increase price method
+  public void increasePrice(double priceToAdd){
+    double newPrice = price + priceToAdd;
+    price = newPrice;
+    
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    Store lemonadeStand = new Store("Lemonade", 3.75);
+    lemonadeStand.increasePrice(1.5);
+    System.out.println(lemonadeStand.price);
+    
+  }
+  
+  
+}
+  /**********************************************************Returns*********************************************************/
+  public class Store {
+  // instance fields
+  String productType;
+  double price;
+  
+  // constructor method
+  public Store(String product, double initialPrice) {
+    productType = product;
+    price = initialPrice;
+  }
+  
+  // increase price method
+  public void increasePrice(double priceToAdd){
+    double newPrice = price + priceToAdd;
+    price = newPrice;
+  }
+  
+  // get price with tax method
+  public double getPriceWithTax(){
+    double totalPrice = price + price*0.08;
+    return totalPrice;
+    
+  }
+
+  // main method
+  public static void main(String[] args) {
+    Store lemonadeStand = new Store("Lemonade", 3.75);
+    double lemonadePrice = lemonadeStand.getPriceWithTax();
+    System.out.println(lemonadePrice);
+
+  }
+}
+/****************************************************************The toString() Method******************************************************/
+public class Store {
+  // instance fields
+  String productType;
+  double price;
+  
+  // constructor method
+  public Store(String product, double initialPrice) {
+    productType = product;
+    price = initialPrice;
+  }
+  
+  // increase price method
+  public void increasePrice(double priceToAdd){
+    double newPrice = price + priceToAdd;
+    price = newPrice;
+  }
+  
+  // get price with tax method
+  public double getPriceWithTax(){
+    double tax = 0.08;
+    double totalPrice = price + price*tax;
+    return totalPrice;
+  }
+
+  // main method
+  public static void main(String[] args) {
+    Store lemonadeStand = new Store("Lemonade", 3.75);
+    Store cookieShop = new Store("Cookies", 5);
+    System.out.println(lemonadeStand);
+    System.out.println(cookieShop);
+
+  }
+  public String toString(){
+    return "This store sells " + productType + " at a price of " + price + ".";
+  }
+}
+/**************************************************Review********************************************/
+
+
+
+
