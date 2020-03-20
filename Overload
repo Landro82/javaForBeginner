@@ -1,0 +1,20 @@
+class DecodeRobot {
+    void tap(String name, int a){
+        for(int i = 0; i < a; i++){
+            System.out.println(name);
+        }
+    }
+    void tap(String name){
+        // for(int i = 0; i < 3; i++){
+        //  System.out.println(name);
+        // }
+        this.tap(name, 3);
+    }
+}
+class Story {    
+	public static void main(String[] args) {
+	    DecodeRobot decodeRobot = new DecodeRobot();
+        decodeRobot.tap("firstCode");
+        decodeRobot.tap("secondCode", 5);
+    }
+}
