@@ -1,0 +1,31 @@
+class Animal {
+
+	void move() {
+		System.out.println("Ich bewege mich");
+	}
+}
+
+class Parrot extends Animal {
+
+	void speak() {
+		System.out.println("Ich kann sprechen");
+	}
+	@Override
+	void move(){
+	    System.out.println("Ich fliege");
+	}
+	void speak(String text){
+	    System.out.println(text);
+	}
+
+}
+
+class Story {
+
+	public static void main(String[] args) {
+		Parrot paco = new Parrot();
+		paco.move();
+		paco.speak();
+		paco.speak("Ich kann viele verschiedene Sätze sagen");
+	}
+}
