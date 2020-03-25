@@ -1,0 +1,38 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+ class Fibonacci{
+    public static int fibonacci(int n) {
+    if(n <= 0){
+        return 0;
+    } else if(n == 1) {
+        return 1;
+    } else{
+        int a = 0; //Fib(i-2)
+        int b = 1; // Fib/i-1)
+        int i = 2;
+        while(i <= n){
+            int a1 = b; //Fib(i-1)
+            int b1 = a + b; // Fib(i)
+            a = a1; // Hilfsvariable für Folgedurchgang
+            b = b1; // Hilfsvariablle für Folgedurchgan
+            i++;
+        }
+        return b;
+    }
+}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Fibonacci Fib = new Fibonacci();
+		Fib.fibonacci(3);
+		System.out.println(Fib.fibonacci(8));
+	}
+}
