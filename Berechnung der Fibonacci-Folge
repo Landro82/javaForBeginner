@@ -1,0 +1,30 @@
+/******************************************************************************
+
+• Die Folge beginnt mit einem Paar junger Kaninchen
+• Nach einem Monat ist ein Kaninchen fortpflanzungsfähig
+• Ein Kaninchenpaar (im Fortpflanzungsalter) gebärt jeden Monat ein weiteres Kaninchenpaar
+Die Fibonacci-Folge: 1, 1, 2, 3, 5, 8, 13, 21, ...
+Fib(i) = Fib(i − 2) + Fib(i − 1), i > 1
+
+*******************************************************************************/
+ class Fibonacci{
+    public static int fibonacci(int n) {
+    if(n <= 0){
+        return 0;
+    } else if(n == 1) {
+        return 1;
+    } else{
+        return fibonacci(n-2) + fibonacci(n-1);
+    }
+}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Fibonacci Fib = new Fibonacci();
+		Fib.fibonacci(3);
+		System.out.println(Fib.fibonacci(1));
+	}
+}
