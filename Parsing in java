@@ -1,0 +1,17 @@
+/*Java Einstieg Woche4 Kapitel2 Aufgabe2*/
+public class MathRobot {
+	public double div(String a, String b) {
+		// Füge hier deinen Code ein
+		double x = Double.parseDouble(a);
+		double y = Double.parseDouble(b);
+		return x/y;
+	}
+}
+
+public class Story {
+	public static void main(String args[]) {
+		MathRobot ronja = new MathRobot();
+		System.out.println("3 durch 2 ist: " + ronja.div("3","2"));
+		System.out.println("2 durch 2 ist: " + ronja.div("2","2"));
+	}
+}
