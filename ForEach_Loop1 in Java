@@ -1,0 +1,31 @@
+/*Java Einstieg Woche4 Kapitel4 Aufgabe2*/
+public class Calculator {
+
+	int calculateSum(int[] numbers) {
+		// Berechne hier die Summe aller Zahlen mit einer foreach Schleife und gib sie zurück:
+		int sum = 0;
+		for(int i : numbers){
+		    sum += i;
+		}
+		return sum;
+
+	}
+
+	double calculateMean(int[] numbers) {
+		double sum = calculateSum(numbers);
+		// Berechne hier das Arithmetische Mittel und gib es zurück:
+		double num = sum /numbers.length;
+		return num;
+
+	}
+}
+
+public class Story {
+
+	public static void main(String[] args) {
+		Calculator calc = new Calculator();
+		int[] numbers = new int[] {8,7};
+		System.out.println("Summe: " + calc.calculateSum(numbers));
+		System.out.println("Mittel: " + calc.calculateMean(numbers));
+	}
+}
