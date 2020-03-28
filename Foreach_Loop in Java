@@ -1,0 +1,29 @@
+/*ava Einstieg Woche4 Kapitel4 Aufgabe1*/
+import java.util.ArrayList;
+
+public class Robot {
+    public void giveAccessCodes(ArrayList<String> myArray){
+
+        for(String s : myArray){
+            System.out.println(s);
+        }
+        
+        
+    }
+
+}
+
+import java.util.ArrayList;
+
+public class Story {
+
+	public static void main(String[] args) {
+		Robot ronja = new Robot();
+		ArrayList<String> accessCodes = new ArrayList<String>();
+		accessCodes.add("Sesam");
+		accessCodes.add("oeffne");
+		accessCodes.add("dich!");
+		ronja.giveAccessCodes(accessCodes);
+	}
+
+}
