@@ -1,0 +1,38 @@
+/*Java Einstieg Woche4 Kapitel5 Aufgabe1*/
+interface Flyable {
+    abstract public void fly();
+}
+
+public class Parrot implements Flyable {
+    public void fly(){
+        System.out.println("Ich fliege mit meinen Flügeln!");
+    }
+
+}
+
+public class Robot implements Flyable {
+    public void fly(){
+        System.out.println("Ich fliege mit meinen Raketen!");
+    }
+
+}
+
+public class SuperVillain implements Flyable {
+    public void fly(){
+        System.out.println("Ich fliege mit meinem SuperVillain-Umhang!");
+    }
+
+}
+
+public class Story {
+
+	public static void main(String[] args) {
+		Parrot paco = new Parrot();		
+		Robot ronja = new Robot();		
+		SuperVillain eikeVil = new SuperVillain();
+		paco.fly();
+		ronja.fly();
+		eikeVil.fly();
+	}
+
+}
