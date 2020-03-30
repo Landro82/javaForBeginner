@@ -1,0 +1,103 @@
+/* Java Einstieg Woche4 Kapitel3 Aufgabe2 */
+***************************************************************************************************************************************
+ Die Türen im Versteck von Eike sind in der Lage, verschiedene Zugangscodes zusammen mit anderen 
+ wichtigen Informationen zu speichern. Ein Zugangscode wird durch ein Objekt der Klasse AccessCode repräsentiert.
+ Erstelle in der Klasse Door zuerst eine HashMap mit dem Namen doorCodes. Diese soll Objekte vom Typ 
+ AccessCode mit einem Schlüssel vom Typ String speichern.
+ Implementiere in der Klasse Door anschließend die Funktion addDoorKey(). Diese soll einen String und ein Objekt vom Typ 
+AccessCode annehmen. Das Objekt der Klasse AccessCode soll mit dem String als Schlüssel der HashMap doorCodes hinzugefügt werden.
+Füge der Klasse Door außerdem eine Funktion useCode() hinzu, die einen String annimmt und ein Objekt aus der HashMap sucht, dessen
+Schlüssel dem übergebenen String entspricht. Das Attribut numberOfTimesUsed des Objektes soll um 1 erhöht werden. Falls es danach größer 
+als 2 ist, soll außerdem das Attribut valid gleich false gesetzt werden und die Methode soll “Schlüssel nicht mehr gültig” ausgeben.
+Ansonsten soll “Schlüssel gültig” ausgegeben werden. */
+***************************************************************************************************************************************
+
+class AccessCode {
+
+	private int numberOfTimesUsed;
+	private String lastTimeUsed;
+	private boolean valid;
+
+	public AccessCode(int numberOfTimesUsed, String lastTimeUsed) {
+		this.numberOfTimesUsed = numberOfTimesUsed;
+		this.lastTimeUsed = lastTimeUsed;
+		this.valid = true;
+	}
+	
+	public int getNumberOfTimesUsed() {
+		return numberOfTimesUsed;
+	}
+
+	public void setNumberOfTimesUsed(int numberOfTimesUsed) {
+		this.numberOfTimesUsed = numberOfTimesUsed;
+	}
+
+	public String getLastTimeUsed() {
+		return lastTimeUsed;
+	}
+
+	public void setLastTimeUsed(String lastTimeUsed) {
+		this.lastTimeUsed = lastTimeUsed;
+	}
+
+	public boolean isValid() {
+		return valid;
+	}
+
+	public void setValid(boolean valid) {
+		this.valid = valid;
+	}
+	
+**************************************************************************************************************************************
+}
+
+import java.util.HashMap;
+
+class Door {
+   
+   public HashMap<String, AccessCode> doorCodes = new HashMap<>();
+
+	public HashMap<String, AccessCode> getDoorCodes() {
+		return doorCodes;
+	}
+	
+	public void addDoorKey(String s, AccessCode access){
+	    if(!doorCodes.containsKey(s)){
+	         getDoorCodes().put(s, access);
+	    }
+	}
+	
+	public void useCode(String s){
+	    
+	    if(getDoorCodes().containsKey(s)){
+	       // System.out.println(s);
+// Access an Item : doorCodes.get(element)
+            doorCodes.get(s).setNumberOfTimesUsed(doorCodes.get(s).getNumberOfTimesUsed()+1);
+	        if(doorCodes.get(s).getNumberOfTimesUsed() > 2){
+	            doorCodes.get(s).setValid(false);
+	            System.out.println("Schlüssel nicht mehr gültig");
+	        }
+	       else{
+	           System.out.println("Schlüssel gültig");
+	       }     
+        }
+    }
+	    
+}
+
+*************************************************************************************************************************************
+class Story {
+
+	public static void main(String args[]) {
+		Door door = new Door();
+		AccessCode haifischbecken = new AccessCode(1, "12.02.2003");
+		AccessCode federvieh = new AccessCode(2, "23.02.2016");
+
+		door.addDoorKey("haifischbecken", haifischbecken);
+		door.addDoorKey("federvieh", federvieh);
+
+		door.useCode("haifischbecken");
+		door.useCode("federvieh");
+	}
+}
+
