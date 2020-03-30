@@ -1,0 +1,73 @@
+/*Java Einstieg Woche4 Kapitel5 Aufgabe2 in OpenHpi */
+**************************************************************************************************************************************
+Als nächstes wollen wir die Verfolgungsjagd simulieren.
+Erstelle dazu in der Klasse TheChase eine neue LinkedList mit dem Namen chasers als Attribut. 
+Diese soll Objekte aufnehmen, die das Interface Flyable implementieren.
+Füge in der Klasse Story der LinkedList chasers des Objekts theChase anschließend die 3 Objekte paco, ronja und eikeVil hinzu.
+Implementiere anschließend in der Klasse TheChase eine Methode chase(), die die Methode fly() auf allen Objekten in chasers aufruft.
+Nutze dazu eine for-each-Schleife.
+*****************************************************************************************************************************************
+public interface Flyable {
+        void fly();
+}
+***************************************************************************************************************************************
+public class Parrot implements Flyable{
+
+    public void fly() {
+        System.out.println("Ich fliege mit meinen Flügeln!");
+    }
+}
+*************************************************************************************************************************************
+public class Robot implements Flyable{
+
+    public void fly() {
+        System.out.println("Ich fliege mit meinen Raketen!");
+    }
+
+}
+************************************************************************************************************************************
+public class SuperVillain implements Flyable{
+
+    public void fly() {
+        System.out.println("Ich fliege mit meinem SuperVillain-Umhang!");
+    }
+
+}
+************************************************************************************************************************************
+import java.util.LinkedList;
+
+public class TheChase  {
+    public LinkedList <Flyable> chasers;
+   
+   public TheChase() {
+       chasers = new LinkedList<>();
+    }
+    /*public LinkedList <Flyable> getChasers() {
+		return chasers;
+	}*/
+    public void chase(){
+        for (Flyable temp : chasers) {
+            temp.fly();
+    }
+        
+    }
+}
+**************************************************************************************************************************************
+public class Story {
+
+	public static void main(String[] args) {
+		TheChase theChase = new TheChase();
+		Parrot paco = new Parrot();		
+		Robot ronja = new Robot();		
+		SuperVillain eikeVil = new SuperVillain();
+// 		LinkedList<Flyable> chasers = new LinkedList<Flyable>();
+		theChase.chasers.add(paco);
+		theChase.chasers.add(ronja);
+		theChase.chasers.add(eikeVil); 
+		
+    theChase.chase();
+	}
+
+}
+
+
