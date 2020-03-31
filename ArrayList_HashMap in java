@@ -1,0 +1,89 @@
+/*Java Einstieg Woche4 Kapitel3 Aufgabe3*/
+**************************************************************************************************************************************
+Um eine genauere Suche nach bestimmten Zugangscodes zu ermöglichen, soll zwischen Zugangscodes, die von Eike bereits während
+der Entführung genutzt wurden sowie bisher ungenutzten Zugangscodes unterschieden werden.
+Erstelle in der Klasse Robot zwei ArrayLists usedAccessCodes und unusedAccessCodes, die Objekte vom Typ AccessCode aufnehmen.
+Füge der Klasse Robot anschließend eine Methode saveCodes() hinzu. Diese soll eine ArrayList als Parameter annehmen, 
+die Objekte vom Typ AccessCode annimmt. Die Funktion soll durch alle Elemente der übergebenen Liste iterieren und, falls 
+das Attribut used eines Elementes true ist, das entsprechende Element der Liste usedAccessCodes hinzufügen. Andernfalls soll es
+der Liste unusedAccessCodes hinzugefügt werden. [Tipp: Die Anzahl der Elemente in einer ArrayList kann mit der Methode size() 
+abgefragt werden.]
+Füge der Klasse Robot anschließend ein weiteres Attribut codeHashMap hinzu. Dieses soll eine HashMap sein, welche 
+die ArrayList usedAccessCodes mit unter dem Schlüssel “used” und die ArrayList unusedAccessCodes unter dem Schlüssel “unused” abspeichert.
+Diese Zuweisung der bereits vorher angelegten Attribute soll in der Methode buildHashMap() geschehen.
+*************************************************************************************************************************************
+class AccessCode {
+
+	private String code;
+	private boolean used;
+
+	AccessCode(String code, boolean used) {
+		this.code = code;
+		this.used = used;			
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public boolean getUsed() {
+		return used;
+	}
+}
+*****************************************************************************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+class Robot {
+  public  ArrayList<AccessCode> usedAccessCodes = new ArrayList<>();
+  public ArrayList<AccessCode> unusedAccessCodes = new ArrayList<>();
+  public HashMap<String, ArrayList<AccessCode>> codeHashMap = new HashMap<>(); 
+    Robot(){
+       
+    }
+    
+    public void saveCodes(ArrayList<AccessCode> a_codes){
+        AccessCode element;
+        for(int i = 0; i < a_codes.size(); i++){
+            element = a_codes.get(i);
+            if(element.getUsed() == true){
+                usedAccessCodes.add(element);
+            } else{
+                unusedAccessCodes.add(element);
+            }
+        }
+        
+        
+    }
+    
+    public void buildHashMap(){
+        codeHashMap.put("used", usedAccessCodes);
+        codeHashMap.put("unused", unusedAccessCodes);
+        
+    }
+
+		
+
+}
+*************************************************************************************************************************************
+import java.util.ArrayList;
+
+class Story {
+
+	public static void main(String[] args) {
+		ArrayList<AccessCode> accessCodes = new ArrayList<>();
+		AccessCode code1 = new AccessCode("Federvieh", true);
+		AccessCode code2 = new AccessCode("e.vil", true);
+		AccessCode code3 = new AccessCode("Haifischbecken", false);
+		AccessCode code4 = new AccessCode("2A2A", false);
+		accessCodes.add(code1);
+		accessCodes.add(code2);
+		accessCodes.add(code3);
+		accessCodes.add(code4);
+		
+		Robot ronja = new Robot();
+		ronja.saveCodes(accessCodes);
+		ronja.buildHashMap();
+	}
+}
+
