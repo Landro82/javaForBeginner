@@ -1,0 +1,52 @@
+/*Java Einstieg Woche4 Kapitel4 Aufgabe3*/
+*************************************************************************************************************************************
+Java Einstieg Woche4 Kapitel4 Aufgabe3
+In dieser Übung soll für jeden Roboter ein Zugangscode erstellt. Dafür muss eine Liste an Zugangscodes zusammengesetzt werden.
+Ergänze dafür in der Klasse Robot die Methode getAccessCode(). In dieser Methode sollen die Elemente 
+der Liste accessCodes hintereinader gehängt werden. [Es werden keine weiteren Trennzeichen benötigt, die Elemente haben jeweils schon 
+Leerzeichen an den betreffenden Stellen.] Anschließend soll der Name des Roboters angehangen und die Zeichenkette zurückgeben werden.
+Ergänze die Methode main() in der Klasse Story so, dass für jeden Roboter die Methode getAccessCode() 
+aufgerufen wird und der Zugangscode auf einer eigenen Zeile ausgegeben wird. Verwende auch hierfür eine foreach-Schleife.
+**************************************************************************************************************************************
+public class Robot {
+	private String name;
+	private String[] accessCodes = new String[]{"Mein ", "Zugangscode ", "ist ", "mein ", "Name: "};
+
+	public Robot(String name) {
+	this.name = name;
+	}
+
+
+	public String getAccessCode() {
+		// Füge hier dein Code ein
+		String cocan_s=""; ;
+		for(String s : this.accessCodes) {
+		    cocan_s= cocan_s + s;
+		   
+		}
+		
+		for(int i=0; i < accessCodes.length; i++) {
+		    accessCodes [i] = null;
+		}
+		
+		this.accessCodes[0] = cocan_s;
+		  
+		return this.accessCodes[0] + this.name;
+	}
+}
+
+***************************************************************************************************************************************
+public class Story {
+	public static void main(String[] args) {
+		Robot[] robots = new Robot[3];
+		robots[0] = new Robot("Ronja");
+		robots[1] = new Robot("Robin");
+		robots[2] = new Robot("Alex");
+	/*	for(int i = 0; i < robots.length; i++){
+		    System.out.println(robots.getAccessCode(i));
+		}*/
+		for(Robot rob : robots){
+		    System.out.println(rob.getAccessCode());
+		}
+	}
+}
