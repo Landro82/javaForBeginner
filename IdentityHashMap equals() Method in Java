@@ -1,0 +1,42 @@
+/*IdentityHashMap equals() Method in Java*/
+**************************************************************************************************************************************
+The java.util.IdentityHashMap.equals() method in Java is used to check for equality between two maps. 
+It verifies whether the elements of one map passed as a parameter is equal to the elements of this map or not.
+Syntax:
+ihashmap1.equals(ihashmap2)
+*************************************************************************************************************************************
+// Java code to illustrate the equals() method 
+import java.util.*; 
+  
+public class Identity_Hash_Map_Demo { 
+    public static void main(String[] args) 
+    { 
+  
+        // Creating an empty IdentityHashMap 
+        IdentityHashMap<Integer, String> identity_hash1 = new IdentityHashMap<Integer, String>(); 
+        IdentityHashMap<Integer, String> identity_hash2 = new IdentityHashMap<Integer, String>(); 
+  
+        // Mapping string values to int keys 
+        identity_hash1.put(10, "Geeks"); 
+        identity_hash1.put(15, "4"); 
+        identity_hash1.put(20, "Geeks"); 
+        identity_hash1.put(25, "Welcomes"); 
+        identity_hash1.put(30, "You"); 
+          
+        // Mapping string values to int keys 
+        identity_hash2.put(10, "Geeks"); 
+        identity_hash2.put(15, "4"); 
+        identity_hash2.put(20, "Geeks"); 
+        identity_hash2.put(25, "Welcomes"); 
+        identity_hash2.put(30, "You"); 
+  
+        // Displaying the IdentityHashMap 
+        System.out.println("First Map: "+ identity_hash1); 
+  
+        // Displaying the final IdentityHashMap 
+        System.out.println("Second Map: "+ identity_hash2); 
+                          
+        // Displaying the equality 
+        System.out.println("Equality: "+ identity_hash1.equals(identity_hash2)); 
+    } 
+} 
