@@ -1,0 +1,64 @@
+/* Javakurs/Übungsaufgaben/Palindrome*/
+import java.util.*;
+
+public class Palindrome {  
+    
+    public void isPalindrome(String text){
+        
+    String reverse = "";
+    
+    for(int i = text.length()-1; i >=0; i--){
+        reverse += text.charAt(i);
+    }
+    if (text.equalsIgnoreCase(reverse)){
+          
+          System.out.println(reverse +" is palindrome");
+      }else{
+          System.out.println(reverse +" is not a palindrome");
+    }
+  }
+}
+public class Main{     
+ public static void main(String args[]){  
+      Palindrome name = new Palindrome();
+      name.isPalindrome("Renten");
+      
+    } 
+  
+}
+************************************************************************************************************************************
+              How to check if String is Palindrome in Java using Recursion
+
+***********************************************************************************************************************************
+/** * Java method to check if given String is Palindrome * @param text * @return true if text is palindrome, otherwise false */
+
+public static boolean isPalindromString(String text){ 
+    String reverse = reverse(text);
+    if(text.equals(reverse)){
+        return true; 
+        
+    } 
+    return false; 
+    
+} 
+/** * Java method to reverse String using recursion * @param input * @return reversed String of input */ 
+
+public static String reverse(String input){
+    if(input == null || input.isEmpty()){
+        return input; 
+        
+    } 
+    return input.charAt(input.length()- 1) + reverse(input.substring(0, input.length() - 1)); 
+    
+    } 
+    
+
+
+public class Main { 
+    public static void main(String args[]) { 
+        System.out.println("Is rentner palindrom?: " + isPalindromString("rentner")); 
+        System.out.println("Is Hannah palindrom?: " + isPalindromString("Hannah")); 
+        System.out.println("Is hannah palindrom?: " + isPalindromString("hannah"));
+        System.out.println("Is neben palindrom?: " + isPalindromString("neben")); 
+        }
+}        
