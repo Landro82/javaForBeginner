@@ -1,0 +1,32 @@
+/*Write a Java program to print the area and perimeter of a circle.*/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		/*System.out.println("   j"+" " + "  a "+" " + " V    V "+" "+ "  a ");
+		System.out.println("   j"+" " + " a a "+" " + " V   V "+" "+ " a a ");
+		System.out.println("j  j"+" " + "aaaaa "+" " + " V V "+" "+ " aaaaa ");
+		System.out.println(" jj"+" " + " a   a "+" " + "  V "+" "+ "  a   a ");
+		
+		double pi = ((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5));
+		System.out.println("PI = "+pi);
+		double result =4.0 * (1 - (1.0/3) + (1.0/5) - (1.0/7) + (1.0/9) - (1.0/11));
+		System.out.println("Result = "+ result);*/
+		
+		Scanner in = new Scanner(System.in);
+		//final PI = 3.14;
+    //Enter the raduis of the circle
+		System.out.print("Input Raduis: ");
+		double raduis = in.nextDouble();
+    
+    //Calculate the perimeter of the  circle
+		double perimeter = 2 * Math.PI * raduis;
+    
+    //Calculate the Area of the circle
+		double area = raduis * raduis;
+    
+		System.out.println("Perimeter = "+ perimeter);
+		System.out.println("Area = "+ area);
+		
+	}
+}
