@@ -1,0 +1,21 @@
+/*program that takes two numbers as input and display the product of two*/
+
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+  
+  Scanner in = new Scanner(System.in);
+  String name = "Antoine";
+  System.out.print("Hello \n" + name);
+  System.out.print("Enter your name: ");
+  String s= in.nextLine();
+	System.out.print("Hello "+ s +"!);
+	
+  System.out.print("Input first number : ");
+  int a = in.nextInt();
+  System.out.print("Input second number : ");
+  int b = in.nextInt();
+  System.out.println("Output = "+(a * b));
+  
+ }
+}
